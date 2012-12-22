@@ -5,7 +5,6 @@ package ru.anfdenis.spring;
  * 10.12.12 23:27
  */
 public class Point {
-
     private int x;
     private int y;
 
