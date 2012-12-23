@@ -2,26 +2,27 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="triangle" class="ru.anfdenis.spring.Triangle">
+    <bean id="triangle" class="ru.anfdenis.spring.basic.Triangle">
         <property name="pointA" ref="pointA"/>
         <property name="pointB" ref="pointB"/>
         <property name="pointC" ref="pointC"/>
     </bean>
 
-    <bean id="pointA" class="ru.anfdenis.spring.Point">
+    <bean id="pointA" class="ru.anfdenis.spring.basic.Point">
         <qualifier value="circleRelated"/>
         <property name="x" value="${pointA.x}"/>
         <property name="y" value="${pointA.y}"/>
     </bean>
 
-    <bean id="pointB" class="ru.anfdenis.spring.Point">
+    <bean id="pointB" class="ru.anfdenis.spring.basic.Point">
         <property name="x" value="-20"/>
         <property name="y" value="0"/>
     </bean>
 
-    <bean id="pointC" class="ru.anfdenis.spring.Point">
+    <bean id="pointC" class="ru.anfdenis.spring.basic.Point">
         <property name="x" value="20"/>
         <property name="y" value="0"/>
     </bean>
@@ -34,6 +35,14 @@
         </property>
     </bean>
 
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>mymessages</value>
+            </list>
+        </property>
+    </bean>
+
     <context:annotation-config/>
-    <context:component-scan base-package="ru.anfdenis.spring"/>
+    <context:component-scan base-package="ru.anfdenis.spring.basic"/>
 </beans>

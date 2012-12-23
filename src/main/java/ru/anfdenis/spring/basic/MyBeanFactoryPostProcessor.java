@@ -1,4 +1,4 @@
-package ru.anfdenis.spring;
+package ru.anfdenis.spring.basic;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;

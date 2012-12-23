@@ -1,4 +1,4 @@
-package ru.anfdenis.spring;
+package ru.anfdenis.spring.basic;
 
 /**
  * Denis Anfertev
