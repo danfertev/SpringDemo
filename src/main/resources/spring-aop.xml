@@ -20,4 +20,9 @@
     <bean id="loggingAspect" class="ru.anfdenis.spring.aop.aspect.LoggingAspect"/>
 
     <aop:aspectj-autoproxy/>
+    <aop:config>
+        <aop:aspect id="loggingAspect" ref="loggingAspect">
+            <aop:around pointcut="execution(* get*())" method="aroundAdvice"/>
+        </aop:aspect>
+    </aop:config>
 </beans>

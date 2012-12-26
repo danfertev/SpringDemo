@@ -22,6 +22,7 @@ public class ShapeService {
 
     @Loggable
     public Circle getCircle() {
+        System.out.println("Circle getter has bean called");
         return circle;
     }
 
