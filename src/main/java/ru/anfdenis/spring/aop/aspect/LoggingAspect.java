@@ -1,7 +1,9 @@
 package ru.anfdenis.spring.aop.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 
 /**
  * Denis Anfertev
@@ -9,8 +11,17 @@ import org.aspectj.lang.annotation.Before;
  */
 @Aspect
 public class LoggingAspect {
-    @Before("execution(public String getName())")
-    public void loggingAdvice(){
-        System.out.println("Advice run. Get method called.");
+    @Before("allCircleMethods()")
+    public void loggingAdvice(JoinPoint joinPoint) {
+        System.out.println(joinPoint.getTarget());
+    }
+
+    @Before("args(name)")
+    public void stingArgumentMethods(String name) {
+        System.out.println("A method that takes String argument has been called. The value is " + name);
+    }
+
+    @Pointcut("within(ru.anfdenis.spring.aop.model.Circle)")
+    public void allCircleMethods() {
     }
 }
