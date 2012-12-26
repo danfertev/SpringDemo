@@ -12,7 +12,7 @@
     </bean>
 
     <bean id="circle" class="ru.anfdenis.spring.aop.model.Circle">
-        <property name="name" value="Circle name"/>
+        <!--<property name="name" value="Circle name"/>-->
     </bean>
 
     <bean id="shapeService" class="ru.anfdenis.spring.aop.service.ShapeService" autowire="byName"/>

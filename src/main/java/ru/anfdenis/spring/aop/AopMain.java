@@ -13,6 +13,6 @@ public class AopMain {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-aop.xml");
         ShapeService shapeService = context.getBean("shapeService", ShapeService.class);
         shapeService.getCircle().setName("Dummy name");
-        System.out.println(shapeService.getCircle().getName());
+//        System.out.println(shapeService.getCircle().getName());
     }
 }

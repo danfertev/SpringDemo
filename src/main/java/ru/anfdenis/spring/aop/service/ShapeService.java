@@ -1,5 +1,6 @@
 package ru.anfdenis.spring.aop.service;
 
+import ru.anfdenis.spring.aop.aspect.Loggable;
 import ru.anfdenis.spring.aop.model.Circle;
 import ru.anfdenis.spring.aop.model.Triangle;
 
@@ -19,6 +20,7 @@ public class ShapeService {
         this.triangle = triangle;
     }
 
+    @Loggable
     public Circle getCircle() {
         return circle;
     }

@@ -14,4 +14,10 @@ public class Circle extends Shape {
     public void setName(String name) {
         super.setName(name);
     }
+
+    public String setNameAndReturn(String name) {
+        super.setName(name);
+        System.out.println("Circle's setter called");
+        return name;
+    }
 }
