@@ -12,9 +12,12 @@ import ru.anfdenis.spring.data.model.Circle;
 public class JdbcDemo {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-data.xml");
-        JdbcDaoImpl  dao = context.getBean("jdbcDaoImpl", JdbcDaoImpl.class);
-        Circle circle = dao.getCircle(0);
-        System.out.println(circle.getName());
-        System.out.println(dao.getCircleNumber());
+        JdbcDaoImpl dao = context.getBean("jdbcDaoImpl", JdbcDaoImpl.class);
+//        Circle circle = dao.getCircleForId(0);
+//        System.out.println(circle.getName());
+//        System.out.println(dao.getCircleName(0));
+//        dao.insertCircle(new Circle(2, "Third circle"));
+//        System.out.println(dao.getAllCircles().size());
+//        dao.createTriangleTable();
     }
 }
